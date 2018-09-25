@@ -1,0 +1,26 @@
+
+## Docker docker.io/alpine
+## Nginx version  nginx-1.14.0.tar.gz
+
+########### need delete ###########
+##### Dockerfile
+## RUN rm -rf /work
+
+##### burgessng.service
+## -v /work/:/work/
+########### need delete ###########
+
+## add burgessng in systemctl
+cp burgessng.service /lib/systemd/system/burgessng.service
+systemctl enable burgessng
+systemctl daemon-reload
+
+## start burgessng
+systemctl start burgessng
+
+## stop burgessng
+systemctl stop burgessng
+
+## curl test web
+curl 127.0.0.1:9280
+

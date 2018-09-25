@@ -7,7 +7,7 @@ After=docker.service
 Type=oneshot
 
 ExecStartPre=-/usr/bin/docker rm -f %N
-ExecStart=/usr/bin/docker run --name %N -itd -p 9280:80 -p 8943:443 burgessng
+ExecStart=/usr/bin/docker run --name %N -itd -v /work/:/work/ -p 9280:80 -p 8943:443 burgessng
 
 ExecStop=-/usr/bin/docker stop -t 2 %N
 ExecStop=-/usr/bin/docker rm -f %N

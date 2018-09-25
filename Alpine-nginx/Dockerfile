@@ -27,6 +27,7 @@ RUN chmod 755 /work/nginx/run.sh
 
 RUN rm -rf /nginx-1.14.0
 RUN rm -rf /var/cache/apk/*
+RUN rm -rf /work
 
 EXPOSE 80
 EXPOSE 443
